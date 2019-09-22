@@ -1,4 +1,5 @@
-# README - Script Projects
+# Script Projects
+*Note: These are very much work-in-progress projects to help teach myself to better use bash and Python.*
 
 These are some simple command-line based scripts I've made to practice learning. *Note: The look of the scripts' output will obviously depend on your own setup. These screenshots are from my own terminal configuration.* 
 
