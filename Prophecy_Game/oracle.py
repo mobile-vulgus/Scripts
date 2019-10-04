@@ -57,7 +57,7 @@ def oracle_ascii():
                V E R S I O N    1.4.2             
 """)
     slow_type("""
-             WHAT HAS THE WORLD BECOME?            
+             WHAT WILL YOU DO AT THE END OF THE WORLD?            
 """)
     print("\n")
     os.system('setterm -cursor on')
@@ -70,7 +70,7 @@ def linebreaker():
 
 def prompt():
     os.system('setterm -cursor off')
-    slow_type("  A disease, a dereliction, or a dream?\033[01;32;40m (Rebirth?)\033[01;32;40m \n")
+    slow_type("Fight, Flee, or Freeze?\n")
     os.system('setterm -cursor on')
 
 # Define input questions/responses
@@ -82,44 +82,47 @@ def questions():
         if choice in ['help', 'h', 'q', 'quit', 'exit', 'leave']:
             slow_type("\nIs it really so hard?\n\n~ ")
             linebreaker()
-      
-        elif choice.lower() in ['disease', 'a disease']:
-            slow_type("\nA wound that will not heal.\n")
-            slow_type("Have you any banages?\n")
+        
+        # Fight
+        elif choice.lower() in ['fight']:
+            slow_type("\nYou hold your ground against apocalypse.\n")
+            slow_type("The end comes by the air. A poison cloud unseen. Do you breathe it in?\n")
             wound = input("~ ")
             if wound in ['yes', 'Yes', 'YES', 'Y', 'y']:
-                slow_type("\nPlease stem the flow...\n")
+                slow_type("\nYou died. It was poison...\n")
                 linebreaker()
             else: 
-                slow_type("\nDrained...\n")
+                slow_type("\nHow long can you hold your breath?")
                 linebreaker()
-    
-        elif choice.lower() in ['dereliction', 'a dereliction']:
-            slow_type("\nA shambles that will not tidy.\n")
+        
+        # Flee
+        elif choice.lower() in ['flee']:
+            slow_type("\nThe sky fades as you hide underground.\n")
             linebreaker()    
-
-        elif choice.lower() in ['dream', 'a dream']:
-            slow_type("\nA haze in which to slumber.\n")
+        
+        # Freeze
+        elif choice.lower() in ['freeze']:
+            slow_type("\nYou watch the world disintegrate around you.\n")
             linebreaker()
 
-        elif choice.lower() == ("rebirth"):
-            oracle_ascii()
-            slow_type("""           Where did you\033[01;32;40m sleep\033[01;91m last night?           \n""")
-            linebreaker()
-            choice2 = input("~ ")
-            if choice2.lower() in ['in the pines', 'the pines', 'pines']:
-                slow_type("""\n     You're going where the cold wind blows...     \n""")
-                linebreaker()
-                time.sleep(3)
-                os.system('clear')
-
-            else:
-                slow_type('\n')
-                linebreaker()
-                break
+        # elif choice.lower() == ("rebirth"):
+        #     oracle_ascii()
+        #     slow_type("""           Where did you\033[01;32;40m sleep\033[01;91m last night?           \n""")
+        #     linebreaker()
+        #     choice2 = input("~ ")
+        #     if choice2.lower() in ['in the pines', 'the pines', 'pines']:
+        #         slow_type("""\n     You're going where the cold wind blows...     \n""")
+        #         linebreaker()
+        #         time.sleep(3)
+        #         os.system('clear')
+        #
+        #    else:
+        #        slow_type('\n')
+        #        linebreaker()
+        #        break
 
         else:
-            slow_type("\nSeek clarity.")
+            slow_type("\nI don't understand.")
             os.system('setterm -cursor off')
             time.sleep(3)
             oracle_ascii()
