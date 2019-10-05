@@ -96,7 +96,7 @@ def gas_breath():
             if val >= 3:
                 break
             else:
-                slow_type("\nThe poison is still too thick.\n")
+                slow_type("\nThe poison is still too thick. Try again.\n")
         except ValueError:
             slow_type("\nAmount must be a number, try again\n")
     return val 
