@@ -1,9 +1,16 @@
+#   O R A C L E 
+# ----------------
+# by mobile-vulgus, 2019
+#
+# A simple branching text game for the terminal
+
+
 import time
 import os
 import sys
 import random
 
-# "Loading" effect
+# Real-Time Connection Effect
 def oracle_connect():
     os.system('clear')
     print("Connecting to Oracle.")
@@ -20,10 +27,16 @@ def oracle_connect():
     os.system('clear')
     time.sleep(.5)
     print("Connected")
+    time.sleep(.3)
+    os.system('clear')
+    time.sleep(.3)
+    print("Connected")
     time.sleep(1)
     os.system('clear')
 
 # Visual letter-by-letter typing effect
+# Conflicts with slow_type(), but delay_print() prints
+# consistently at same speed
 def delay_print(s):
     os.system('setterm -cursor off')
     for c in s:    #for character in string
@@ -33,6 +46,8 @@ def delay_print(s):
     os.system('setterm -cursor on')
 
 # Realistic randomized-speed typing
+# Conflicts with delay_print(), but slow_type() randomizes
+# its speed. 'setterm' may not work across various systems
 typing_speed = 80 #wpm
 def slow_type(t):
     os.system('setterm -cursor off')
