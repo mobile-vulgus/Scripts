@@ -33,7 +33,7 @@ def delay_print(s):
     os.system('setterm -cursor on')
 
 # Realistic randomized-speed typing
-typing_speed = 50 #wpm
+typing_speed = 80 #wpm
 def slow_type(t):
     os.system('setterm -cursor off')
     for l in t:
@@ -73,6 +73,19 @@ def prompt():
     slow_type("              Fight, Flee, or Freeze?              \n")
     os.system('setterm -cursor on')
 
+def gas_breath():
+    while True:
+        amount = input("~ ")
+        try:
+            val = int(amount)
+            if val >= 3:
+                break
+            else:
+                slow_type("\nThe poison is still too thick.\n")
+        except ValueError:
+            slow_type("\nAmount must be a number, try again\n")
+    return val 
+
 # Define input questions/responses
 def questions():
     while True:
@@ -93,7 +106,8 @@ def questions():
                 slow_type("\nYou died. It was poison...\n")
                 linebreaker()
             else: 
-                slow_type("\nHow long can you hold your breath?\n")
+                slow_type("\nHow many minutes can you hold your breath?\n")
+                gas_breath()
                 linebreaker()
         
         # Flee
@@ -105,22 +119,6 @@ def questions():
         elif choice.lower() in ['freeze']:
             slow_type("\nYou watch the world disintegrate around you.\n")
             linebreaker()
-
-        # elif choice.lower() == ("rebirth"):
-        #     oracle_ascii()
-        #     slow_type("""           Where did you\033[01;32;40m sleep\033[01;91m last night?           \n""")
-        #     linebreaker()
-        #     choice2 = input("~ ")
-        #     if choice2.lower() in ['in the pines', 'the pines', 'pines']:
-        #         slow_type("""\n     You're going where the cold wind blows...     \n""")
-        #         linebreaker()
-        #         time.sleep(3)
-        #         os.system('clear')
-        #
-        #    else:
-        #        slow_type('\n')
-        #        linebreaker()
-        #        break
 
         else:
             slow_type("\nI don't understand.")
