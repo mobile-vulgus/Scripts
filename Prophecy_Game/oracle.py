@@ -48,16 +48,16 @@ def oracle_ascii():
     os.system('clear')
     os.system('setterm -cursor off')
     delay_print("""
-   ██████╗ ██████╗  █████╗  ██████╗██╗     ███████╗ 
-  ██╔═══██╗██╔══██╗██╔══██╗██╔════╝██║     ██╔════╝ 
-  ██║   ██║██████╔╝███████║██║     ██║     █████╗   
-  ██║   ██║██╔══██╗██╔══██║██║     ██║     ██╔══╝   
-  ╚██████╔╝██║  ██║██║  ██║╚██████╗███████╗███████╗ 
-   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚══════╝╚══════╝ 
-               V E R S I O N    1.4.2             
+  ██████╗ ██████╗  █████╗  ██████╗██╗     ███████╗
+ ██╔═══██╗██╔══██╗██╔══██╗██╔════╝██║     ██╔════╝
+ ██║   ██║██████╔╝███████║██║     ██║     █████╗  
+ ██║   ██║██╔══██╗██╔══██║██║     ██║     ██╔══╝  
+ ╚██████╔╝██║  ██║██║  ██║╚██████╗███████╗███████╗
+  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚══════╝╚══════╝
+              V E R S I O N    1.4.2              
 """)
     slow_type("""
-             WHAT WILL YOU DO AT THE END OF THE WORLD?            
+     WHAT WILL YOU DO AT THE END OF THE WORLD?            
 """)
     print("\n")
     os.system('setterm -cursor on')
@@ -70,7 +70,7 @@ def linebreaker():
 
 def prompt():
     os.system('setterm -cursor off')
-    slow_type("Fight, Flee, or Freeze?\n")
+    slow_type("              Fight, Flee, or Freeze?              \n")
     os.system('setterm -cursor on')
 
 # Define input questions/responses
@@ -86,13 +86,14 @@ def questions():
         # Fight
         elif choice.lower() in ['fight']:
             slow_type("\nYou hold your ground against apocalypse.\n")
-            slow_type("The end comes by the air. A poison cloud unseen. Do you breathe it in?\n")
-            wound = input("~ ")
-            if wound in ['yes', 'Yes', 'YES', 'Y', 'y']:
+            slow_type("The end comes by the air. A poison cloud unseen.\n")
+            slow_type("Do you breathe it in?\n")
+            breathe = input("~ ")
+            if breathe in ['yes', 'Yes', 'YES', 'Y', 'y']:
                 slow_type("\nYou died. It was poison...\n")
                 linebreaker()
             else: 
-                slow_type("\nHow long can you hold your breath?")
+                slow_type("\nHow long can you hold your breath?\n")
                 linebreaker()
         
         # Flee
